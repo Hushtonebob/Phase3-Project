@@ -4,6 +4,7 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.string :title
       t.integer :genre_id
       t.integer :released_year_id
+      t.boolean :based_on_book
     end
   end
 end
