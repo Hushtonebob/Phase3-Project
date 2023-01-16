@@ -1,5 +1,4 @@
 class Platform < ActiveRecord::Base
-    belongs_to :genres
-    belongs_to :release_years
-    belongs_to :movies
+has_many :games
+has_many :genres, through: :games
 end
