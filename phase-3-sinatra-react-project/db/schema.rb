@@ -10,29 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_15_233312) do
-
-  create_table "books", force: :cascade do |t|
-    t.string "title"
-    t.integer "genre_id"
-    t.integer "released_year_id"
-    t.boolean "has_movie"
-    t.integer "movie_id"
-  end
-
-  create_table "genres", force: :cascade do |t|
-    t.string "type"
-  end
-
-  create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.integer "genre_id"
-    t.integer "released_year_id"
-    t.boolean "based_on_book"
-  end
-
-  create_table "released_years", force: :cascade do |t|
-    t.integer "year"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end
