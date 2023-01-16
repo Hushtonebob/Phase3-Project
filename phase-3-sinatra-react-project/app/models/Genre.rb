@@ -1,4 +1,4 @@
 class Genre < ActiveRecord::Base
-    has_many :movies
-    has_many :release_years, through: :movies
+    has_many :games
+    has_many :platforms, through: :games
 end
