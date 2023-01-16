@@ -3,6 +3,7 @@ class CreatePlatforms < ActiveRecord::Migration[6.1]
 
     create_table :platforms do |t|
       t.string :name
+      t.string :img_url
     end
 
   end
