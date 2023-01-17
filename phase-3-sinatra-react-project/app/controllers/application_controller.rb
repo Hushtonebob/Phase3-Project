@@ -28,12 +28,21 @@ class ApplicationController < Sinatra::Base
 #GAMES PATHS
 
   get "/games" do
-    Game.all.to_json
+    reviews = Game.all.map do |game|
+      blam = [
+      title: game.title,
+      img_url: game.img_url,
+      year: game.year,
+      review: game.reviews
+    ]
+      blam
+    end
+    reviews.to_json
   end
 
   get '/games/:id' do 
     game = Game.find(params[:id])
-    game.to_json
+    game.to_json(include: :reviews)
   end
 
 #ADD GAMES
