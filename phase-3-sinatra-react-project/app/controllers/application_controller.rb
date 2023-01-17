@@ -68,44 +68,4 @@ class ApplicationController < Sinatra::Base
     game.to_json
   end
 
-#REVIEWS PATHS
-
-   get "/reviews" do
-    Review.all.to_json
-  end
-
-  get "/reviews/:game_id" do
-    review = Review.find_by(params[:game_id])
-    review.to_json
-  end
-
-#ADD REVIEWS
-
-  post "/reviews" do
-    new = Review.create(
-      title: params[:title],
-      game_id: params[:game_id],
-      rating: params[:rating]
-    )
-    new.to_json
-  end
-
-#UPDATE REVIEWS
-
-  patch 'reviews/:id' do
-    review = Review.find(params[:id])
-    review.update(
-      rating:params[:id]
-    )
-  end
-
-#DELETE REVIEWS
-
-  delete '/reviews/:id' do
-    rev = Review.find(params[:id])
-    rev.destroy
-    rev.to_json
-  end
-
-
 end
