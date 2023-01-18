@@ -14,9 +14,10 @@ ActiveRecord::Schema.define(version: 2023_01_16_003508) do
 
   create_table "games", force: :cascade do |t|
     t.string "title"
+    t.integer "year"
+    t.integer "review"
     t.integer "genre_id"
     t.integer "platform_id"
-    t.integer "year"
     t.string "img_url"
   end
 
@@ -27,12 +28,6 @@ ActiveRecord::Schema.define(version: 2023_01_16_003508) do
   create_table "platforms", force: :cascade do |t|
     t.string "name"
     t.string "img_url"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.string "title"
-    t.integer "game_id"
-    t.integer "rating"
   end
 
 end
